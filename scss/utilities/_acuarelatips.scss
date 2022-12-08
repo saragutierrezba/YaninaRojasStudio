@@ -1,0 +1,45 @@
+@import "utilities/variables";
+@import "utilities/listas";
+@import "utilities/mediaqueries";
+@import "utilities/mixin";
+@import "utilities/extend";
+
+
+/*Estilos de Acuarela tips para móvil*/
+
+@media screen and (min-width: 320px) {
+
+body{
+    main h2:hover{
+        color: white;
+        font-weight: bold;
+    }
+        .acuarela__titulo{
+        @include estilo-titulos;
+    }
+        .video__acuarela{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            size-adjust: 0.5rem;
+        
+    }
+        .texto__acuarela{
+        @include estilo-textos
+    }
+
+    footer{
+        @include estilo-footer;
+    }
+}
+}
+
+
+
+
+
+
+
+
+

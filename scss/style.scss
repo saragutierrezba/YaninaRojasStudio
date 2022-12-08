@@ -1,0 +1,123 @@
+
+@import "utilities/variables";
+@import "utilities/listas";
+@import "utilities/mixin";
+@import "utilities/extend";
+@import "utilities/mediaqueries";
+@import "utilities/productos";
+@import "utilities/acuarelatips";
+@import "utilities/sobremi";
+@import "utilities/contacto";
+
+
+
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos de Index para móvil*/
+
+@media screen and (min-width: 320px) {
+
+body{
+    background-color: $color-principal;
+       header{
+              background-image: linear-gradient(to right, rgb(252, 165, 179), rgb(236, 197, 203));
+              h1:hover{
+                      color: nth($list:$colores,$n:2);
+                      font-weight: bold;
+                      }
+              .nombre__artista {
+                               color: nth($list:$colores,$n:3);
+                               font-size: 1.8rem *2;
+                               font: bold;
+                               font-family: 'Dancing Script', cursive;
+                               margin-top: 15px;
+                               display: grid;
+                               grid-template-columns: 100%; 
+                               }
+              .logo{
+                   width: 30%;
+                   height: 30%;
+                   text-align: left;
+                   margin-top: 1.8rem;
+                   margin-left: 0.5rem;
+                   }
+
+               .fondo-nav{
+                background-color: nth($list:$colores,$n:5);
+                padding: 0.5rem;
+                margin-top: 1rem;
+
+                      a:link{
+                            color: nth($list:$colores,$n:4);
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
+                 
+                       a:visited{
+                             color: nth($list:$colores,$n:3);
+                             margin: 0rem;
+                             padding: 0rem;
+                             text-decoration: none;
+                             font-weight: bold;
+                             font-family: 'Josefin Sans', sans-serif;
+                             list-style: none;
+                             display: inline-block;
+                             display: grid;
+                             grid-template-rows: 100%;
+                        }
+               }
+                   
+              
+            }
+
+        main{
+            .conoceProductos{
+                color: nth($colores, 2);
+                margin: 1rem;
+                padding: 0rem;
+                text-align: center;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 1.7rem;text-decoration: underline;
+
+            }
+           
+            h3:hover{
+                    color: nth($list:$colores,$n:3);
+                    font-weight: bold;
+                    }
+            div{
+                .parrafo1{
+                    @include estilo-textos
+                }
+
+                .parrafo2{
+                    @include estilo-textos
+                }
+            }
+        }
+
+        main{
+                .redesSociales{
+                  width: 10%;
+                  margin-left: 14rem;
+                  margin-top: 8px;
+                  
+                }
+
+                .infoRedes{
+                    @include estilo-textos;
+                }
+            }
+        }
+        
+        footer{
+            @include estilo-footer;
+            }
+}
+

@@ -1,0 +1,65 @@
+@mixin estilo-titulos {
+        font-weight: bolder;
+        font-size: 2rem;
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        margin-left: 15px;
+        margin-top: 1rem;
+        border: 2px palevioletred;
+        color: nth($list:$colores,$n:2);
+        
+}
+@mixin estilo-footer {
+        color: nth($list:$colores,$n:4);
+        text-align: right;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+        display: grid;
+        grid-template-columns: 100%
+        }
+
+@mixin estilo-textos {
+        text-align: center;
+        margin: 1rem;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.2rem    
+}
+
+@mixin estilo-subtitulosSobreMi {
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: underline;
+        font-family: 'Josefin Sans', sans-serif;
+        margin-left: 1rem;
+        margin-top: 0.8rem;
+        border: 2px palevioletred;
+        color: palevioletred;   
+}
+
+@mixin estilo-subtitulosProductos {
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        text-decoration: underline;
+        margin-left: 1rem;
+        margin-top: 0.8rem;
+        border: 2px palevioletred;
+        color: nth($list:$colores,$n:2);     
+}
+
+@mixin estilo-textosDesktop1 {
+        text-align: left;
+        margin: 1rem;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2rem   
+}
+
+@mixin estilo-textosDesktop2 {
+        text-align: center;
+        margin: 1rem;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2rem   
+}
+
