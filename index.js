@@ -1,4 +1,4 @@
-// Mi proyecto se trata de una Tienda Online de Obras artisticas de una artista llamada Yanina Rojas
+// Mi proyecto se trata de una Tienda Online de Obras artisticas por \ Yanina Rojas
 
 let productos = parseInt(prompt ("¿Que producto te gustaria comprar? 1.Acuarela - 2.Retratos - 3.Souvenirs"))
 const seguirComprando = true;
@@ -27,9 +27,8 @@ productosArray.push(souvenirs);
 
 console.log(productosArray)
 
-//Creo el carrito array 
+//Carrito array 
 let carrito = [];
-//si hay algo en el local storage se carga en el carrito
 if (localStorage.getItem("carrito") ) {
   carrito = JSON.parse(localStorage.getItem ("carrito"));
 }
@@ -160,6 +159,28 @@ const calcularTotal = () => {
   total.innerHTML = ` $${totalCompra}`
 }
 
+ //Function actualizarCarrito()
+ {
+   let aux = '';
+   carrito.forEach((prod) => {
+     aux.innerHTML += `
+     
+     <div class = "card">
+        <img src=" ${producto.img}" class= "card-img-top imgProductos" alt="${productosArray.name}">
+        <div class="card-body">
+        <h3 class="card-title"> ${producto.name} </h3>
+        <p class="card-text">$ ${producto.price} </p>
+        <p class="card-text">$ ${producto.cantidad} </p>
+        <button class="btn colorBoton" id="eliminar${producto.id}"> Eliminar Producto </button>
+        </div>
+     </div>
+   
+   `
+   });
+   contenedorCarrito.innerHTML = aux;
+   calcularTotalCompra();
+ }
+
 
 while (seguirComprando === true) {
     if(productos === 1){
@@ -195,3 +216,30 @@ function descuento(valor) {
 alert(`El total de tu compra con descuento es ${totalCompraConDescuento}`)
 let valorDescuento = valor * (descuento / 100)
 let valorFinal = valor - valorDescuento
+
+//Mostrar carrito de compras
+  
+  
+verCarrito.addEventListener("click", (e) => {
+  mostrarCarrito(e.target.id, data);
+}  )
+ 
+//Función para mostrar carrito
+  contenedorCarrito.innerHTML="";
+  carrito.forEach(producto => {
+    const card = document.createElement("div");
+    card.classList.add ("col-xl-3", "col-md-6", "col-xs-12")
+    card.innerHTML = `
+        <div class = "card">
+           <img src=" ${producto.img}" class= "card-img-top imgProductos" alt="${productosArray.name}">
+           <div class="card-body">
+           <h3 class="card-title"> ${producto.name} </h3>
+           <p class="card-text">$ ${producto.price} </p>
+           <p class="card-text">$ ${producto.cantidad} </p>
+           <button class="btn colorBoton" id="eliminar${producto.id}"> Eliminar Producto </button>
+           </div>
+        </div>
+      `
+      contenedorCarrito.appendChild(card) ;
+
+  )

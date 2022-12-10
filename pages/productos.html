@@ -223,11 +223,33 @@
 
     </main>
 
+    <main class="container">
+      <select name="lista" id="lista"></select>
+      <button id="filtrar" class="btn-dark ">FILTRAR</button>
+      <h1 class="text-center">Stock de productos reutilizables</h1>
+      <hr>
+      <div id="contenedorProductos" class="row row-cols-1 cards "></div>
+
+
+      <!-- Carrito de compras-->
+      <hr>
+      <h4>Carrito de compras</h4>
+      <h3>Total de la compra: <span id="totalCompra">0</span></h3>
+      <button class="btn colorBoton" id="verCarrito">Ver Carrito</button>
+      <button class="btn colorBoton" id="vaciarCarrito">Vaciar Carrito</button>
+
+      <div id="contenedorCarrito" class="row"></div>
+
+   </main>
+
     <footer class="derechos__reservados--negro">
             Todos los derechos reservados
     </footer>
 
-    <!-- JavaScript Bundle with Popper -->
+   <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+   <!-- Java script-->
+  <script src="../index.js"></script>
+
 </body>
 </html>
